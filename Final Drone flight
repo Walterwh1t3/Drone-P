@@ -1,0 +1,32 @@
+from djitellopy import tello
+from time import sleep
+
+tello = tello.Tello()
+tello.connect()
+print(tello.get_battery())
+
+# takeoff to 200cm
+tello.takeoff()
+tello.move_up(120)
+
+
+tello.rotate_counter_clockwise(40)
+sleep(.5)
+
+# move forward 800cm
+tello.move_forward(400)
+sleep(.5)
+tello.move_forward(400)
+
+tello.rotate_counter_clockwise(180)
+sleep(.5)
+
+# move forward 800cm
+tello.move_forward(400)
+sleep(.5)
+tello.move_forward(400)
+
+tello.rotate_counter_clockwise(140)
+sleep(.5)
+
+tello.land()
